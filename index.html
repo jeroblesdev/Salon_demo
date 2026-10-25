@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière Studio | Salón de Belleza</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <!-- LOGO TIPOGRÁFICO (Fácil de cambiar) -->
+    <div class="logo">LUMIÈRE <span>studio</span></div>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#reservar" class="btn-nav">Agendar Cita</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-imagen">
+      <!-- Foto de Unsplash de estética/salón -->
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop" alt="Salón de belleza">
+    </div>
+    <div class="hero-texto">
+      <h1>Realza tu <br><em>belleza natural.</em></h1>
+      <p>Tratamientos personalizados, color y estilo en un espacio diseñado para consentirte. Reserva tu momento.</p>
+      <a href="#reservar" class="btn-principal">Reservar mi cita</a>
+    </div>
+  </section>
+
+  <section id="servicios" class="servicios">
+    <div class="seccion-titulo">
+      <span class="etiqueta">NUESTROS SERVICIOS</span>
+      <h2>El arte de consentirte</h2>
+    </div>
+    
+    <div class="grid-servicios">
+      <div class="servicio-card">
+        <h3>Corte y Estilo</h3>
+        <p>Corte personalizado, lavado y peinado con acabado profesional.</p>
+        <span class="precio">Bs 60</span>
+      </div>
+      <div class="servicio-card">
+        <h3>Color y Mechas</h3>
+        <p>Técnicas de coloración para un look radiante y natural.</p>
+        <span class="precio">Desde Bs 150</span>
+      </div>
+      <div class="servicio-card">
+        <h3>Manicura & Pedicura</h3>
+        <p>Cuidado completo de manos y pies con esmaltado semipermanente.</p>
+        <span class="precio">Bs 80</span>
+      </div>
+      <div class="servicio-card">
+        <h3>Maquillaje</h3>
+        <p>Maquillaje social o de novia adaptado a tu estilo.</p>
+        <span class="precio">Desde Bs 120</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservar" class="reserva-contenedor">
+    <div class="reserva-info">
+      <h2>Tu momento <br><em>de brillar.</em></h2>
+      <p>Elige tu servicio favorito y el horario que mejor te quede. Te confirmaremos por WhatsApp.</p>
+    </div>
+
+    <form id="form-reserva" class="formulario">
+      <div class="input-group">
+        <label for="servicio">1. Selecciona tu servicio</label>
+        <select id="servicio" required>
+          <option value="" disabled selected>Elige una opción...</option>
+          <option value="Corte y Estilo (Bs 60)">Corte y Estilo</option>
+          <option value="Color y Mechas">Color y Mechas</option>
+          <option value="Manicura & Pedicura (Bs 80)">Manicura & Pedicura</option>
+          <option value="Maquillaje">Maquillaje</option>
+        </select>
+      </div>
+
+      <div class="fila-inputs">
+        <div class="input-group">
+          <label for="fecha">2. Fecha</label>
+          <input type="date" id="fecha" required>
+        </div>
+        <div class="input-group">
+          <label for="hora">3. Hora</label>
+          <input type="time" id="hora" required>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="nombre">4. Tu Nombre</label>
+        <input type="text" id="nombre" placeholder="Ej. Maria Perez" required>
+      </div>
+
+      <button type="submit" class="btn-enviar">Confirmar mi cita</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2026 Lumière Studio. Belleza y armonía.</p>
+  </footer>
+
+</body>
+</html>
