@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --fondo: #FBF9F6; /* Blanco roto/crema */
+  --texto: #2C2C2C; /* Gris muy oscuro, no negro puro */
+  --terracota: #C57B57; /* Acento elegante */
+  --lineas: #E5DFD8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+h1, h2, h3, .logo { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+em { font-style: italic; color: var(--terracota); }
+
+/* Header */
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 30px 5%; background-color: var(--fondo);
+}
+.logo { font-size: 1.8rem; letter-spacing: 2px; font-weight: 600; color: var(--texto); }
+.logo span { font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; color: var(--terracota); }
+nav a { color: var(--texto); text-decoration: none; margin-left: 30px; font-size: 0.9rem; transition: 0.3s; }
+nav a:hover { color: var(--terracota); }
+.btn-nav { border: 1px solid var(--terracota); padding: 8px 20px; border-radius: 50px; }
+
+/* Hero (Asimétrico) */
+.hero {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  min-height: 75vh; background-color: #F3EFE9;
+}
+.hero-imagen img { width: 100%; height: 100%; object-fit: cover; border-bottom-right-radius: 100px; }
+.hero-texto {
+  padding: 8% 10%; display: flex; flex-direction: column; justify-content: center;
+}
+.hero-texto h1 { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; }
+.hero-texto p { font-size: 1.1rem; font-weight: 300; margin-bottom: 40px; max-width: 400px; }
+.btn-principal {
+  display: inline-block; width: fit-content;
+  background-color: var(--texto); color: var(--fondo);
+  padding: 15px 40px; text-decoration: none; border-radius: 50px; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s;
+}
+.btn-principal:hover { background-color: var(--terracota); }
+
+/* Servicios */
+.servicios { padding: 100px 10%; }
+.seccion-titulo { text-align: center; margin-bottom: 60px; }
+.etiqueta { color: var(--terracota); letter-spacing: 3px; font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 15px;}
+.seccion-titulo h2 { font-size: 3rem; }
+
+.grid-servicios {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto;
+}
+.servicio-card {
+  padding: 30px; background-color: var(--fondo); border: 1px solid var(--lineas); border-radius: 15px; transition: 0.3s;
+}
+.servicio-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.servicio-card h3 { font-size: 1.8rem; margin-bottom: 10px; color: var(--texto); }
+.servicio-card p { font-size: 0.95rem; font-weight: 300; color: #666; margin-bottom: 15px; }
+.precio { font-family: 'Jost', sans-serif; font-weight: 500; color: var(--terracota); font-size: 1.1rem; }
+
+/* Reserva */
+.reserva-contenedor {
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding: 100px 10%; background-color: #fff;
+}
+.reserva-info h2 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+.reserva-info p { color: #777; font-weight: 300; max-width: 300px; }
+
+.formulario { display: flex; flex-direction: column; justify-content: center; }
+.input-group { display: flex; flex-direction: column; margin-bottom: 25px; }
+.input-group label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--terracota); margin-bottom: 8px; }
+
+/* Inputs con estilo moderno/limpio */
+input, select {
+  background: #FBF9F6; border: 1px solid var(--lineas);
+  color: var(--texto); padding: 15px; border-radius: 8px;
+  font-family: 'Jost', sans-serif; font-size: 1rem; outline: none; transition: 0.3s;
+}
+input:focus, select:focus { border-color: var(--terracota); }
+.fila-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.btn-enviar {
+  background-color: var(--terracota); color: #fff;
+  border: none; padding: 18px; border-radius: 50px; font-size: 1rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; margin-top: 10px;
+}
+.btn-enviar:hover { background-color: #b06846; }
+
+footer { text-align: center; padding: 40px; border-top: 1px solid var(--lineas); color: #999; font-size: 0.9rem; }
+
+@media (max-width: 768px) {
+  .hero, .reserva-contenedor, .grid-servicios { grid-template-columns: 1fr; }
+  .hero-imagen { height: 50vh; border-radius: 0 0 50px 50px; }
+  .hero-texto { padding: 10% 5%; text-align: center; }
+  .hero-texto p { margin: 0 auto 30px auto; }
+  .fila-inputs { grid-template-columns: 1fr; gap: 0;}
+  header { flex-direction: column; gap: 20px; }
+}
